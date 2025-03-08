@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Professional CV</title>
+    <link rel="stylesheet" href="/GIN446-Website/GIN446-Frontend/styles/cvschedulestyles/schedulestyle.css">
+    <link rel="stylesheet" href="/GIN446-Website/GIN446-Frontend/styles/cvschedulestyles/cvstyle.css">
+</head>
+
+<body>
+    <nav class="navbar">
+
+    </nav>
+
+    <form id="cvform" method="post" action="/GIN446-Website/GIN446-Backend/makecv.php?v=1" autocomplete="on">
+        <h1 class="center-typing-animation">Make your own CV<span class="cursor">|</span></h1>
+        <div id="cvhead">
+            <h2>Header of your CV: </h2>
+            <hr>
+            <div>
+                <label for="fname">First Name: </label>
+                <input type="text" id="fname" name="fname" required>
+
+                <label for="lname" class="lineform">Last Name: </label>
+                <input type="text" id="lname" name="lname" required>
+            </div>
+
+            <br>
+
+            <div>
+                <label for="profession">Profession: </label>
+                <input type="text" id="profession" name="profession" required>
+
+                <label for="major" class="lineform">College Major: </label>
+                <input type="text" id="major" name="major" required>
+            </div>
+
+            <br>
+
+            <div>
+                <label for="email">E-mail: </label>
+                <input type="email" id="email" name="email" required autocomplete="on"
+                    title="Enter a valid email address, e.g., michel@example.com" placeholder="michel@example.com">
+
+                <label for="tel" class="lineform">Phone number: </label>
+                <input type="tel" id="tel" name="tel" required autocomplete="on"
+                    pattern="^(\+961\s?[1-9]\d{1}\s?\d{6}|\(0[1-9]\)\s?\d{6}|\+961\s?[7]\d{1}\s?\d{6})$"
+                    title="Enter a valid Lebanese phone number, e.g., +961 xx xxxxxx" placeholder="+961 03 123 456">
+            </div>
+
+            <br>
+
+            <div>
+                <label for="linkedin">LinkedIn: </label>
+                <input type="text" id="linkedin" name="linkedin" Placeholder="(Optional)">
+
+                <label for="address" class="lineform">Address: </label>
+                <input type="text" id="address" name="address" Placeholder="(Optional)" autocomplete="on">
+            </div>
+        </div>
+
+        <div id="cvbody">
+            <h2>Body of your CV:</h2>
+            <hr>
+            <div>
+                <label for="sum" style="font-size: 1.1em; font-weight: bold;">Write your professional summary: </label>
+                <br>
+                <textarea id="sum" name="sum" rows="10"
+                    style="width: 70%; overflow: hidden; resize: none; display: block;"></textarea>
+            </div>
+
+            <!--experience-->
+            <h3>Enter your work experience(s): </h3>
+            <div class="experience">
+                <h4>Experience 1:</h4>
+                <div>
+                    <label for="job1title">Job title:</label>
+                    <input type="text" id="job1title" name="job1title">
+                </div>
+
+                <div>
+                    <label for="company1">Company name: </label>
+                    <input type="text" id="company1" name="company1">
+                </div>
+
+                <div>
+                    <label for="job1-sDate">From: </label>
+                    <input type="month" id="job1-sDate" name="job1-sDate">
+
+                    <label for="job1-eDate">To: </label>
+                    <input type="month" id="job1-eDate" name="job1-eDate">
+                </div>
+
+                <div class="jobdescription">
+                    <label for="job1desc1">Job description: </label>
+                    <input type="text" class="jobdesc" name="job1desc1" id="job1desc1">
+                    <button class="addDesc-btn" type="button"><b>+</b></button>
+                </div>
+            </div>
+            <button type="button" id="addExp">+ Add another work experience</button>
+
+            <!--education-->
+            <h3>Your education history:</h3>
+            <div class="education-container">
+                <div class="education">
+                    <h4>Degree 1:</h4>
+                    <div>
+                        <label for="degree1">Degree name: </label>
+                        <input type="text" name="degree1" id="degree1">
+                    </div>
+
+                    <div>
+                        <label for="institution1">Institution: </label>
+                        <input type="text" name="institution1" id="institution1">
+                    </div>
+
+                    <div>
+                        <label for="ed1-sDate">From: </label>
+                        <input type="month" id="ed1-sDate" name="ed1-sDate">
+
+                        <label for="ed1-eDate">To: </label>
+                        <input type="month" id="ed1-eDate" name="ed1-eDate">
+                    </div>
+                </div>
+            </div>
+            <button type="button" id="addEd">+ Add education</button>
+
+            <!--skills-->
+            <h3>Enter your skills:</h3>
+            <div class="skill-container">
+                <div class="skill">
+                    <h4>Skill 1:</h4>
+                    <div>
+                        <label for="skill1">Skill name: </label>
+                        <input type="text" id="skill1" name="skill1">
+                    </div>
+
+                    <div>
+                        <label for="skill1Range">Skill range: </label>
+                        <input type="range" id="skill1Range" name="skill1Range" class="skill-range">
+                    </div>
+                </div>
+            </div>
+            <button type="button" id="addSkill">+ Add skill</button>
+
+            <!--languages-->
+            <h3>Languages that you speak:</h3>
+            <div class="lang-container">
+                <div class="lang">
+                    <h4>Language 1:</h4>
+                    <div>
+                        <label for="lang1">Name: </label>
+                        <input type="text" id="lang1" name="lang1">
+                    </div>
+
+                    <div>
+                        <label for="lang1levels">Proficiency: </label>
+                        <select name="lang1levels" id="lang1levels">
+                            <option value="novice">Novice</option>
+                            <option value="elementary">Elementary</option>
+                            <option value="intermediate">Intermediate</option>
+                            <option value="advanced">Advanced</option>
+                            <option value="fluent">Fluent/Native</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+            <button type="button" id="addLang">+ Add language</button>
+
+            <!--certifications-->
+            <h3>Your certifications:</h3>
+            <div class="cert-container">
+                <div class="cert">
+                    <h4>Certification 1:</h4>
+                    <div>
+                        <label for="cert1name">Name: </label>
+                        <input type="text" id="cert1name" name="cert1name">
+                    </div>
+
+                    <div>
+                        <label for="cert1issuer">Issued by: </label>
+                        <input type="text" id="cert1issuer" name="cert1issuer">
+                    </div>
+
+                    <div>
+                        <label for="cert1date">Date: </label>
+                        <input type="month" id="cert1date" name="cert1date">
+                    </div>
+                </div>
+            </div>
+            <button type="button" id="addCert">+ Add certificate</button>
+        </div>
+        <input type="submit" value="Submit your information">
+    </form>
+
+    <div id="cv-container">
+        
+    </div>
+
+    <button type="button" id="download-btn" disabled>Download as PDF<span><i style="font-size:1.1em"
+                class="fa">&#xf019;</i></span></button>
+
+    <footer id="footer">
+
+    </footer>
+
+</body>
+<script src="/GIN446-Website/GIN446-Frontend/javascript/cvschedule scripts/makecvscript.js?v=1"></script>
+<script src="/GIN446-Website/GIN446-Frontend/javascript/navscript.js?v=1"></script>
+
+
+</html>

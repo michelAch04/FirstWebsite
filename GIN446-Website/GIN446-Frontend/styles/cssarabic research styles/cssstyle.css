@@ -1,0 +1,21 @@
+*{
+    box-sizing: border-box;
+}
+
+
+section p + p {
+    margin-top: 5px;
+}
+section p + h3{
+    margin-top: 15px;
+}
+#block{
+    text-indent: 0px;
+}
+section ul li + li{
+    margin-top: 10px;
+}
+li b{
+    color:rgb(161, 2, 2);
+}
+

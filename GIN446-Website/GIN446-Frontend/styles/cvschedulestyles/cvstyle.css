@@ -1,0 +1,605 @@
+/* General Styling */
+*{
+    box-sizing: border-box;
+}
+@font-face {
+    src: url(\\needs/fonts/Merriweather-Black.ttf);
+    font-family: MW;
+}
+
+body {
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    margin: 0;
+    background-size: 400% 400%;
+    animation: gradientAnimation 4s ease infinite;
+    color: #333;
+}
+
+main{
+    padding: 0;
+    line-height: 1.6;
+}
+
+
+@media (max-width: 768px){
+    section{
+        width: 100% !important;
+    }
+
+    main{
+        padding: 20px;
+    }
+}
+
+
+/* Button Styling */
+#disclaimer-btn {
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    margin: 0 5px;
+    margin-top: 10px;
+    cursor: pointer;
+    display: inline;
+    font-weight: bold;
+    font-size: 1rem;
+    background: linear-gradient(to right, #eb2603, #d55757);
+    color: white;
+}
+
+#disclaimer-btn:hover {
+    background: linear-gradient(to right, #db6550, #e78282);
+}
+
+/* Disclaimer Message Styling */
+#disclaimer-message {
+    background: linear-gradient(to right, #eb2603, #d55757);
+    color: white;
+    padding: 10px;
+    text-align: center;
+    font-weight: bold;
+    margin: 10px;
+    margin-top: 10px;
+    border-radius: 5px;
+}
+
+/* Header Styling */
+header {
+    text-align: center;
+    padding: 20px;
+    background-color: #eb2300;
+    color: #fff;
+    margin: 20px 0;
+    margin-bottom: 30px;
+    
+}
+
+header h1 {
+    margin: 0;
+    color: white;
+    font-size: 3rem;
+    padding: 0px;
+}
+
+header p {
+    margin: 5px 0;
+    font-size: 1rem;
+}
+
+header p a{
+    text-decoration: none;
+    color: white;
+}
+header p a:hover{
+    color:rgb(255, 184, 255);
+}
+
+/* Section Styling */
+section {
+    background: linear-gradient(135deg, #f4f4f4, #ffffff);
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    transition: background 0.5s ease;
+    transition: transform 0.3s, box-shadow 0.3s;
+    width: 80%;
+    margin: 0 auto !important;
+    margin-bottom: 20px !important;
+}
+
+section:hover {
+    transform: translateZ(-10px);
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+}
+
+section h2 {
+    color: #333;
+    border-bottom: 2px solid #333;
+    padding-bottom: 10px;
+}
+
+
+/* Job Styling */
+.job h3 {
+    margin: 0;
+    color: #ff6347;
+    font-size: 1.25rem;
+}
+
+.job p {
+    margin: 5px 0;
+    font-size: 0.9rem;
+    color: #777;
+}
+
+.job ul {
+    list-style-type: disc;
+    margin-left: 20px;
+}
+
+.job ul {
+    padding: 0;
+    list-style-type: none;
+}
+
+.job ul li {
+    padding: 5px 0;
+}
+
+/* Animation Keyframes */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes gradientAnimation {
+    0% {
+        background-position: 0% 50%;
+    }
+
+    50% {
+        background-position: 100% 50%;
+    }
+
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+/* Add an opacity transition for smooth fade-in */
+.fade-in {
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeIn 1s ease-in-out forwards;
+}
+
+#summary {
+    animation-delay: 0.2s;
+}
+
+#experience {
+    animation-delay: 0.4s;
+}
+
+#education {
+    animation-delay: 0.6s;
+}
+
+#skills {
+    animation-delay: 0.8s;
+}
+
+#languages {
+    animation-delay: 1.0s;
+}
+
+#certifications {
+    animation-delay: 1.2s;
+}
+
+/* Skill Progress Bar Styling */
+.skill span {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.progress-bar {
+    background: #ddd;
+    border-radius: 20px;
+    width: 100%;
+    height: 15px;
+    overflow: hidden;
+}
+
+.progress {
+    background: #ff6347;
+    height: 100%;
+    border-radius: 20px;
+    animation: loadProgress 2s ease-in-out forwards;
+}
+
+@keyframes loadProgress {
+    from {
+        width: 0;
+    }
+
+    to {
+        width: var(--progress-width);
+    }
+}
+
+/* Language & Star Rating Styling */
+.language {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.language span {
+    width: auto;
+    font-weight: bold;
+    flex-basis: 30%;
+}
+
+.stars {
+    display: flex;
+    flex-basis: 70%;
+    justify-content: flex-start;
+}
+
+.star {
+    font-size: 1.5rem;
+    color: #ccc;
+    margin-right: 5px;
+}
+
+.star.filled {
+    color: #f39c12;
+}
+
+/* Certification Card Styling */
+.certification-card {
+    box-sizing: border-box;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    transition: transform 0.3s, box-shadow 0.3s;
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+.certification-card h3{
+    color: #ff6347;
+}
+
+#certifications .icon {
+    font-size: 2rem;
+    display: block;
+    margin-bottom: 10px;
+}
+
+.certification-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+/* Responsive Layout */
+@media (max-width: 768px) {
+    .language span {
+        flex-basis: 40%;
+    }
+
+    .stars {
+        flex-basis: 60%;
+    }
+
+    .star {
+        font-size: 1.2rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .language span {
+        flex-basis: 100%;
+        margin-bottom: 5px;
+    }
+
+    .stars {
+        flex-basis: 100%;
+    }
+
+    .star {
+        font-size: 1rem;
+    }
+}
+
+
+
+/*Make your own CV styling*/
+#cv {
+    display: none;
+}
+
+#cvform {
+    padding: 20px;
+}
+
+#cvform>div {
+    background: linear-gradient(135deg, #f4f4f4, #ffffff);
+    padding: 20px;
+    margin: 20px 0;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    transition: background 0.5s ease;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+#cvform>div:hover {
+    transform: translateZ(-10px);
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+}
+
+.lineform {
+    margin-left: 80px;
+}
+
+#cvform h2 {
+    margin-top: 0;
+}
+
+#cvform hr {
+    border: none;
+    height: 3px;
+    background: linear-gradient(to right, #f05438, #fc5b3f, #ed573d);
+    margin: 0;
+    margin-top: -1.5%;
+    margin-bottom: 20px;
+    width: 10%;
+    border-radius: 10px;
+}
+
+#cvform br {
+    display: none;
+}
+
+#cvform h3 {
+    margin: 0;
+    margin-top: 30px;
+}
+
+.jobdescription input:first-of-type {
+    width: 71.7%;
+}
+
+.removeOption-btn {
+    font-size: 0.9em;
+}
+
+.addDesc-btn:hover, .removeOption-btn:hover,
+#addExp:hover, #removeExp:hover,
+#addEd:hover, #removeEd:hover,
+#addSkill:hover, #removeSkill:hover,
+#addLang:hover, #removeLang:hover,
+#addCert:hover, #removeCert:hover {
+    background-color: #ff9380;
+}
+
+.experience, .education, .skill, .lang, .cert{
+    margin-bottom: 10px;
+}
+
+.addDesc-btn, .removeOption-btn,
+#addExp, #removeExp,
+#addEd, #removeEd,
+#addSkill, #removeSkill,
+#addLang, #removeLang,
+#addCert, #removeCert {
+    background-color: #eb2603;
+    color: white !important;
+    border: none;
+    padding: 3px 5px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.removeOption-btn{
+    padding: 1px 3px;
+    font-size: 0.9em;
+}
+
+.addDesc-btn{
+    padding: 0px 3px;
+    font-size: 1.1em;
+}
+
+#cvform h4 {
+    margin: 0;
+    color: #6e6d6d;
+}
+
+.skill-range {
+    appearance: none;
+    height: 8px;
+    background: transparent;
+    border-radius: 5px;
+    outline: none;
+    opacity: 0.7;
+    transition: opacity 0.2s;
+}
+
+.skill-range:hover {
+    opacity: 1;
+}
+
+.skill-range::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 15px;
+    height: 15px;
+    background-color: #e82907;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+input[type="submit"], #download-btn{
+    display: block;
+    margin: 0 auto;
+    background: #eb2603;
+    height: 50px;
+    font-size: 1.5em;
+    color: white;
+    border-color: white;
+    cursor: pointer;
+    padding: 10px;
+}
+
+#download-btn span{
+    text-align: right;
+    margin-left: 5px;
+}
+
+#download-btn{
+    margin-bottom: 20px;
+    display: none;
+}
+
+input[type="submit"]:hover{
+    background: #ff9380;
+}
+
+
+/* Basic styling for the H1 */
+.center-typing-animation {
+    font-size: 2.5em;
+    color: #ff6347;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    display: inline-block;
+    text-align: center;
+    overflow: hidden;
+    white-space: nowrap;
+    width: 0;
+    margin: 0 auto;
+    position: relative;
+    transform: translateX(-50%);
+    left: 50%;
+    animation: typing-center 3s steps(30, end) forwards; /* Typing effect with text staying visible at end */
+    margin-left: 2%;
+    margin-top: -2%;
+}
+
+/* Cursor styling */
+.cursor {
+    font-weight: bold;
+    font-size: 2em;
+    color: #333;
+    animation: blink-caret 0.75s step-end infinite, cursor-fade 0s forwards;
+    animation-delay: 0s, 4s; /* Blink immediately; Fade out starts after 6 seconds */
+}
+
+/* Typing animation that expands from the center */
+@keyframes typing-center {
+    from { 
+        width: 0;
+    }
+    50% {
+        width: 50%;
+    }
+    to { 
+        width: 100%; 
+    }
+}
+
+/* Blinking caret animation */
+@keyframes blink-caret {
+    50% { opacity: 0; }
+}
+
+/* Fades out the cursor after 3 seconds of blinking post-typing */
+@keyframes cursor-fade {
+    to { opacity: 0; }
+}
+
+
+@media (max-width: 768px) {
+    .lineform::before {
+        content: "";
+        display: block;
+    }
+
+    #cvform hr {
+        margin-top: -4%;
+        width: 20%;
+    }
+
+    #cvform br {
+        display: block;
+    }
+
+    #cvform h1{
+        margin-top: -5%;
+    }
+
+    #disclaimer-btn{
+        margin: 0;
+    }
+    header h1{
+        font-size: 2.5em;
+    }
+}
+
+@media (max-width: 500px) {
+    #cvform hr {
+        margin-top: -5%;
+        width: 28%;
+    }
+
+    .jobdescription input:first-of-type {
+        width: 50%;
+    }
+    
+    .center-typing-animation{
+        font-size: 1.8em;
+    }
+}
+
+@media (min-width: 768px){
+    .education-container, .skill-container, 
+    .lang-container, .cert-container{
+        display: flex; 
+        flex-wrap: wrap; /* Allows wrapping to the next line if space runs out */
+        gap: 20px; /* Adds space between each education block */
+      }
+      
+      .education, .skill, .lang, .cert{
+        flex: 1; /* Each education block takes equal space */
+        min-width: 250px; /* Ensures a minimum width for each block */
+      }
+}
+
+
+        /* Temporarily disable animations */
+        .no-animation * {
+            animation: none !important;
+            transition: none !important;
+            visibility: visible !important;
+            opacity: 1 !important;
+            height: auto !important;
+            overflow: visible !important;
+            width: 100% !important;
+        }
+
+        .page-break {
+            page-break-before: always;
+        }

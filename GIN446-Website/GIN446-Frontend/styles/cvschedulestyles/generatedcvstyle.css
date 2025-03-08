@@ -1,0 +1,302 @@
+/* General Styling */
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Roboto, sans-serif;
+    margin: 0;
+    background-color: #f4f4f4;
+    color: #333;
+}
+
+main {
+    width: 100%;
+    padding: 0;
+}
+
+.container {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    padding: 20px;
+    gap: 20px;
+}
+
+.sidebar {
+    flex: 0 1 25%; /* Slightly narrower width */
+    background-color: #ffffff;
+    padding: 20px;
+    border: 3px solid #333;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    position: sticky;
+    top: 0;
+}
+
+.content {
+    flex: 0 1 75%; /* Adjusted width */
+    padding: 20px;
+    background-color: #ffffff;
+    border: 3px solid #333;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+header {
+    width: 100%;
+    text-align: center;
+    padding: 20px;
+    background-color: #333;
+    color: white !important;
+    margin-bottom: 15px;
+}
+
+header h1 {
+    margin: 0;
+    font-size: 3rem;
+    color: white !important;
+}
+
+header p {
+    margin: 5px 0;
+    font-size: 1.1rem;
+}
+
+header p a {
+    text-decoration: none;
+    color: white;
+}
+
+/* Section Styling */
+section {
+    padding: 20px;
+}
+
+section h2 {
+    border-bottom: 2px solid #333;
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+}
+
+/* Job Experience */
+.job h3 {
+    color: #333;
+    font-size: 1.5rem;
+    margin: 0 !important;
+    margin-bottom: 5px;
+}
+
+.job p {
+    color: #777;
+    font-size: 1rem;
+}
+
+.job ul {
+    list-style-type: disc;
+    padding-left: 20px;
+}
+
+.job ul li {
+    margin-bottom: 5px;
+}
+
+/* Sidebar (Skills & Languages) */
+.sidebar h2 {
+    text-align: center;
+    color: #333;
+    font-size: 1.5rem;
+    border-bottom: none;
+    margin-bottom: 20px;
+}
+
+.sidebar:first-child{
+    margin-bottom: 20px;
+}
+
+/* Skills Styling */
+.skill {
+    margin-bottom: 20px;
+}
+
+.skill span {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.progress-bar {
+    background-color: #ddd;
+    border-radius: 10px;
+    height: 15px;
+    overflow: hidden;
+}
+
+.progress {
+    background-color: rgb(115, 115, 230);
+    height: 100%;
+    border-radius: 10px;
+    width: var(--progress-width);
+}
+
+/* Language & Star Rating Styling */
+.language {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.language span {
+    font-weight: bold;
+}
+
+.stars {
+    display: flex;
+}
+
+.star {
+    font-size: 1.3rem;
+    color: #ccc;
+    margin-right: 5px;
+}
+
+.star.filled {
+    color: #f39c12;
+}
+
+/* Certification Card Styling */
+.certification-card {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    padding: 10px;
+    margin-bottom: 10px;
+    text-align: center;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.certification-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+#certifications .icon {
+    font-size: 2rem;
+    display: block;
+    margin-bottom: 10px;
+}
+
+#downloadBtn{
+    display: block;
+    margin: 0 auto;
+    background: #333;
+    height: 50px;
+    font-size: 1.5em;
+    color: white;
+    border-color: white;
+    cursor: pointer;
+    padding: 10px;
+    margin-bottom: 20px;
+}
+
+#downloadBtn:hover{
+    background: #ff8f7c;
+}
+
+/* Responsive Layout for Mobile */
+@media (max-width: 768px) {
+    /* Center and adjust header */
+    header {
+        text-align: center;
+        padding: 15px;
+    }
+
+    header h1 {
+        font-size: 2rem;
+        margin-bottom: 10px;
+    }
+
+    header p {
+        font-size: 1rem;
+    }
+
+    /* Main container becomes single column */
+    .container {
+        flex-direction: column;
+        padding: 10px;
+    }
+
+    /* Content takes full width with consistent padding */
+    .content, .sidebar {
+        width: 100%;
+        padding: 15px;
+        margin: 10px 0; /* Adds space between sections */
+        background-color: #ffffff;
+        border-radius: 8px;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    /* Section header styling for compact display */
+    section h2, .sidebar h2 {
+        font-size: 1.5rem;
+        margin-bottom: 10px;
+        text-align: center;
+        color: #333;
+    }
+
+    /* Job experience and language adjustments */
+    .job h3 {
+        font-size: 1.2rem;
+        text-align: left;
+    }
+
+    .job p {
+        font-size: 0.9rem;
+    }
+
+    /* Progress bars and stars optimized for smaller screens */
+    .progress-bar {
+        height: 10px;
+    }
+
+    .star{
+        font-size: 1.2rem;
+    }
+
+    .language span{
+        width: auto;
+        flex-basis: 30%;
+    }
+
+    .language{
+        flex-wrap: wrap;
+    }
+
+    .language:first-of-type{
+        margin-top: 20px;
+    }
+
+    .sidebar-section{
+        padding: 20px;
+    }
+
+    .sidebar-section h2{
+        border-bottom: 2px solid #333;
+        padding-bottom: 10px;
+        margin-bottom: 20px;
+    }
+
+    .stars{
+        flex-basis: 70%;
+        justify-content: flex-start;
+    }
+
+    /* Certification cards with compact padding */
+    .certification-card {
+        padding: 10px;
+        margin-bottom: 15px;
+    }
+}
+
+

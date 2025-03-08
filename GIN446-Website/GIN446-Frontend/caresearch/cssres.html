@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/GIN446-Website/GIN446-Frontend/styles/researchstyle.css">
+    <link rel="stylesheet" href="/GIN446-Website/GIN446-Frontend/styles/cssarabic research styles/cssstyle.css">
+    <title>Cascading Stylesheets</title>
+</head>
+
+<body>
+    <nav class="navbar">
+
+    </nav>
+
+    <header>
+        <h1>Cascading StyleSheets</h1>
+    </header>
+
+    <main>
+        <div class="container">
+            <aside class="bar" id="sidebar">
+                <figure>
+                    <figcaption>
+                        <h2>Contents</h2>
+                    </figcaption>
+                    <ul id="content">
+                        <li id="active"><a href="cssres.html">Cascading StyleSheets</a>
+                            <ul id="inner_content">
+                                <li><a href="#history">History of CSS</a></li>
+                                <li><a href="#version">Version History</a></li>
+                                <li><a href="#rules">CSS Rules</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="arabicres.html">The Village of Jaj</a></li>
+                    </ul>
+                </figure>
+                <br>
+                <br>
+                <br>
+                <a href="#references" id="bck">References</a>
+            </aside>
+
+            <button id="openSidebar">▶</button>
+
+            <div class="contnt">
+                <section id="history" class="fade-in">
+                    <h2>History of CSS</h2>
+
+                    <h3>What is CSS?</h3>
+                    <p>CSS (Cascading Style Sheets) is a stylesheet language used to describe the presentation of a
+                        document written in HTML or XML. CSS defines how elements should be rendered on screen, on
+                        paper, in speech, or on other media. CSS saves a lot of work, as it can control the layout of
+                        multiple web pages all at once.</p>
+
+                    <h3>How was it invented?</h3>
+                    <p>Style sheets have existed in one form or another since the beginnings of Standard Generalized
+                        Markup Language (SGML) in the 1980s. One requirement for a web style sheet language was for
+                        style sheets to come from different sources on the web. Therefore, existing style sheet
+                        languages like DSSSL and FOSI were not suitable.</p>
+                    <p>The invention of HTML by computer scientist Tim Berners-Lee in the early 1990s allowed content to
+                        be displayed on websites. However, HTML did not offer styling options. Prior to CSS, some style
+                        sheets existed, but they were built into their respective browsers and were proprietary to them.
+                        Moreover, the options provided by these style sheets were limited.</p>
+                    <p>CSS was first proposed in 1994, by Norwegian technologist Håkon Wium Lie, who was then working at
+                        the European Organization for Nuclear Research (CERN) with Berners-Lee. Their vision was to
+                        separate content (HTML) from presentation (CSS), thus simplifying web development and making it
+                        more flexible.</p>
+                    <p>At the same time, several stylesheets were proposed and discussions on public mailing lists and
+                        World Wide Web Consortium (W3C) resulted in the first W3C CSS Recommendation being released in
+                        the year 1996. Bert Bos, a Dutch computer scientisht, also made an influential proposal and
+                        became the co-author of CSS1 and therefore regarded as one of the creators of CSS.</p>
+                </section>
+
+                <section id="version" class="fade-in">
+                    <h2>CSS Version History</h2>
+
+                    <h3>CSS1 (December 1996)</h3>
+                    <p> The first official CSS specification, CSS1, was introduced in 1996. It allowed for basic
+                        stylings, such as text styling and font properties, margins, padding, color and background
+                        styling, and the box model, but was limited in terms of layout control. Web browser support was
+                        minimal and thus prevented the popularity of CSS Level 1 for several years.</p>
+
+                    <h3>CSS2 (May 1998)</h3>
+                    <p>CSS2 introduced a plethora of new features, including positioning, improved control over layout,
+                        and also introduced styles for other media types and more sophisticated methods for selecting
+                        elements for styling.</p>
+
+                    <h3>CSS2.1 (June 2011)</h3>
+                    <p>An important revision that fixed inconsistencies and errors found in CSS2. This version focused
+                        on clarifying and improving the CSS2 specification, providing greater stability and browser
+                        compatibility.</p>
+
+                    <h3>CSS3 (Ongoing)</h3>
+                    <p>Rather than being released as a single, monolithic specification, CSS3 is divided into several
+                        separate modules, each adding new features and capabilities. These modules include Selectors,
+                        Box Model, Backgrounds and Borders, Text Effects, 2D/3D Transformations, Animations, Flexbox,
+                        Grid Layout, and more. Modules are standardized independently, allowing for faster development
+                        and browser implementation.</p>
+
+                    <h3>CSS4 (in development)</h3>
+                    <p>CSS4 is the future of CSS, aiming to further enhance web design capabilities, including
+                        responsive design, variable fonts, and improved grid systems.</p>
+                </section>
+
+                <section id="rules" class="fade-in">
+                    <h2>CSS Rules</h2>
+
+                    <h3>What are they?</h3>
+                    <p>A CSS rule is a grouping of one or more CSS properties which are to be applied to one or more
+                        target HTML elements. <br>
+                        A CSS rule consists of a CSS selector and a set of CSS properties. The CSS selector determines
+                        what HTML elements to target with the CSS rule. The CSS properties specifies what to style of
+                        the targeted HTML elements.</p>
+
+                    <h3>At-Rules</h3>
+                    <p>At-rules are CSS statements that instruct CSS how to behave. They begin with an at sign '@',
+                        followed by an identifier, and include everything up to the next semicolon, or the next CSS
+                        block, whichever comes first.
+                        <br>
+                        <b>Statement at-rules</b> end in a semicolon. There are several statement at-rules,
+                        designated by their identifiers, each with a different syntax:
+                    </p>
+                    <ul>
+                        <li><b>@charset:</b> An algorithm that determines the fallback character set used by the style
+                            sheet.
+                        </li>
+                        <li><b>@import:</b> Tells the CSS engine to include an external style sheet.</li>
+                        <li><b>@layer:</b> Defines the order of precedence in case of multiple cascade layers. Also used
+                            as a
+                            block at-rule to define a layer's styles.</li>
+                        <li><b>@namespace:</b> Defines a default namespace for a style sheet or a namespace prefix that
+                            a
+                            selector only matches if the namespace and other selector components match.</li>
+                    </ul>
+                    <br>
+
+                    <p id="block"><b>Block at-rules</b> end in a {}-block that contain nested rules, other at-rules, or
+                        property or
+                        descriptor declarations:</p>
+                    <ul>
+                        <li><b>@counter-style: </b>Define custom counter styles and extend predefined list styles.</li>
+                        <li><b>@container: </b>A conditional group rule that applies its content if the container meets
+                            the &lt;container-condition&gt;s.</li>
+                        <li><b>@font-face: </b>Defines font resource locations, both local and external, along with the
+                            style characteristics for when those resources are used with a declared font-family.</li>
+                        <li><b>@font-feature-values </b>(plus @swash, @ornaments, @annotation, @stylistic, @styleset and
+                            @character-variant): Controls font display per font-family by defining font-specific
+                            alternates, or custom names, to feature indexes in font-variant-alternates in OpenType.</li>
+                        <li><b>@keyframes </b>(and the @-webkit-keyframes alias): Define a named animation by describing
+                            defining CSS styles for intermediate steps (or keyframes) in the animation sequence.</li>
+                        <li><b>@layer: </b>Creates a named cascade layer with the CSS rules for that layer inside. Also
+                            used as a statement at-rule to define the order of precedence in case of multiple cascade
+                            layers.</li>
+                        <li><b>@media: </b>A conditional group rule that applies its content if the device meets the
+                            criteria of the condition defined using a media query.</li>
+                        <li><b>@page: </b>Specifies aspects of a page to be printed, such as its dimensions,
+                            orientation, and margins.</li>
+                        <li><b>@position-try: </b>Defines custom position options which can be used to define fallback
+                            positioning and alignment options for anchor-positioned elements.</li>
+                        <li><b>@property: </b>Defines a CSS custom property, allowing for property type checking and
+                            constraining, setting default values, and defining whether a custom property can inherit
+                            values or not.</li>
+                        <li><b>@scope: </b>Defines a scope in which to apply them to selected elements and the styles to
+                            apply to the elements in that scope.</li>
+                        <li><b>@starting-style: </b>Define the starting property values for an element to transition
+                            from when the element receives its first style update, such as when transitioning from
+                            "display: none".</li>
+                        <li><b>@supports: </b>A conditional group rule applies its content if the browser supports the
+                            CSS features of the given condition.</li>
+                        <li><b>@view-transition: </b>Opts the current document into a view transition, and the
+                            destination document as well in the case of cross-document navigation transitions.</li>
+                    </ul>
+                </section>
+
+                <section id="references" class="fade-in">
+                    <h2>References</h2>
+                    <ol>
+                        <li>GeeksforGeeks, “CSS history & versions,” <a
+                                href="https://www.geeksforgeeks.org/css-history-versions/">https://www.geeksforgeeks.org/css-history-versions/</a>.
+                        </li>
+                        <li>Z. Ziium, “History of CSS,” Dev.to, <a
+                                href="https://dev.to/ziizium/history-of-css-3m0">https://dev.to/ziizium/history-of-css-3m0</a>.
+                        </li>
+                        <li>Encyclopaedia Britannica, “CSS | programming language,” <a
+                                href="https://www.britannica.com/technology/CSS-programming-language">https://www.britannica.com/technology/CSS-programming-language</a>.
+                        </li>
+                        <li>Almabetter, “History of CSS,” <a
+                                href="https://www.almabetter.com/bytes/articles/history-of-css">https://www.almabetter.com/bytes/articles/history-of-css</a>.
+                        </li>
+                        <li>Wikipedia, “CSS,” <a
+                                href="https://en.wikipedia.org/wiki/CSS">https://en.wikipedia.org/wiki/CSS</a>.</li>
+                        <li>Mozilla Developer Network, “@rule,” <a
+                                href="https://developer.mozilla.org/en-US/docs/Web/CSS/At-rule">https://developer.mozilla.org/en-US/docs/Web/CSS/At-rule</a>.
+                        </li>
+                        <li>Jenkov Tutorials, “CSS properties and CSS rules,” <a
+                                href="https://jenkov.com/tutorials/css/css-properties-css-rules.html#:~:text=A%20CSS%20rule%20is%20a,target%20with%20the%20CSS%20rule.">https://jenkov.com/tutorials/css/css-properties-css-rules.html#:~:text=A%20CSS%20rule%20is%20a,target%20with%20the%20CSS%20rule</a>.
+                        </li>
+                    </ol>
+                </section>
+            </div>
+        </div>
+    </main>
+
+    <footer id="footer">
+        
+    </footer>
+</body>
+
+<script src="/GIN446-Website/GIN446-Frontend/javascript/navscript.js"></script>
+<script src="/GIN446-Website/GIN446-Frontend/javascript/research scripts/researchscript.js"></script>
+
+</html>

@@ -1,0 +1,69 @@
+@media (max-width: 768px){
+    .bar #active::marker {
+        content: "▶  ";
+        font-size: 0.6em;
+    }
+    .bar #active #inner_content{
+        display: none;
+    }
+    .bar{
+        top: 35%;
+    }
+}
+pre {
+    font-family: "Courier New", Courier, monospace;
+    font-size: 14px;
+    line-height: 1.5;
+    margin: 10px 0;
+    padding: 10px;
+    white-space: pre-wrap; /* Allows wrapping inside the container */
+    word-wrap: break-word; /* Break long words */
+    overflow: auto; /* Adds a scroll bar if the content is too wide */
+    background-color: #f4f4f4; /* Light gray background */
+    border: 1px solid #ccc;    /* Light border */
+    border-radius: 5px;        /* Rounded corners */
+    max-width: 100%; /* Keeps it within the container's width */
+    box-sizing: border-box; /* Includes padding and borders in the width */
+}
+
+#html-patterns ul li, #magic-constants ul li{
+    margin-top: 5px;
+}
+strong{
+    font-weight: 500;
+    color: #ff6347;
+}
+.contnt ul li::marker{
+    font-size: 0.8rem;
+}
+
+table {
+    table-layout: fixed; /* Constrain table to respect width */
+    word-wrap: break-word; /* Break long text within cells */
+    width: 85%;
+    border-collapse: collapse;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 8px 12px rgba(0, 0, 0, 0.05);
+    margin: 20px auto;
+}
+
+th {
+    background-color: #2e3236;
+    color: #fff;
+    text-transform: uppercase;
+    font-weight: 600;
+    letter-spacing: 0.1rem;
+}
+
+th,td{
+    padding: 10px;
+}
+
+td{
+    border: 1px solid #ccc; /* Applies a border around each cell */
+}
+
+tbody{
+    background-color: #ededed;
+}

@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Research on HTML, PHP, and XML</title>
+    <link href="/GIN446-Website/GIN446-Frontend/styles/researchstyle.css" rel="stylesheet" />
+    <link href="research.css" rel="stylesheet" />
+</head>
+
+<body>
+    <nav class="navbar">
+    </nav>
+    <header>
+        <h1>Class research snippets</h1>
+    </header>
+    <main>
+        <div class="container">
+            <aside class="bar" id="sidebar">
+                <figure>
+                    <figcaption>
+                        <h2>Contents</h2>
+                    </figcaption>
+                    <ul id="content">
+                        <li id="active"><a href="#html">HTML Forms</a>
+                            <ul id="inner_content">
+                                <li><a href="#html-patterns">HTML Patterns</a></li>
+                                <li><a href="#button-input">Button vs Input Type="Button"</a></li>
+                                <li><a href="#get-post">GET vs POST</a></li>
+                            </ul>
+                        </li>
+                        <li id="active"><a href="#php">PHP</a>
+                            <ul id="inner_content">
+                                <li><a href="#spaceship-operator">PHP Spaceship Operator</a></li>
+                                <li><a href="#magic-constants">PHP Magic Constants</a></li>
+                            </ul>
+                        </li>
+                        <li id="active"><a href="#xml">XML</a>
+                            <ul id="inner_content">
+                                <li><a href="#external-dtd">External DTDs</a></li>
+                                <li><a href="#standalone-attribute">Standalone Attribute</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </figure>
+                <br />
+                <a href="#references" id="bck">Go to References</a>
+            </aside>
+            <button id="openSidebar">▶</button>
+            <div class="contnt">
+                <section id="html">
+                    <h2>HTML Forms</h2>
+                    <article id="html-patterns">
+                        <h3>HTML Patterns</h3>
+                        <p>HTML patterns are reusable solutions for common web development problems, including
+                            responsive design, form validation, navigation, and media embedding patterns. Examples
+                            include:</p>
+                        <ul>
+                            <li><strong>Responsive Patterns:</strong> Using meta tags and modern CSS techniques for
+                                adaptive designs.</li>
+                            <pre>
+&lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
+&lt;style&gt;
+    body {
+        display: flex;
+        flex-direction: column;
+    }
+    @media (min-width: 768px) {
+        body {
+            flex-direction: row;
+             }
+    }
+&lt;/style&gt;
+                            </pre>
+                            <li><strong>Form Validation:</strong> Using attributes like 'required', 'pattern', and
+                                &lt;datalist&gt; for input suggestions.</li>
+                            <pre>
+&lt;form&gt;
+    &lt;label for="email"&gt;Email:&lt;/label&gt;
+    &lt;input type="email" id="email" name="email" required&gt;
+                      
+    &lt;label for="age"&gt;Age:&lt;/label&gt;
+    &lt;input type="text" id="age" name="age" pattern="[0-9]+" title="Only numbers are allowed"&gt;
+                      
+    &lt;label for="browser"&gt;Choose a browser:&lt;/label&gt;
+    &lt;input list="browsers" id="browser" name="browser"&gt;
+    &lt;datalist id="browsers"&gt;
+        &lt;option value="Chrome"&gt;
+        &lt;option value="Firefox"&gt;
+        &lt;option value="Safari"&gt;
+        &lt;option value="Edge"&gt;
+    &lt;/datalist&gt;
+    &lt;button type="submit"&gt;Submit&lt;/button&gt;
+&lt;/form&gt;
+                            </pre>
+                            <li><strong>Navigation Patterns:</strong> Semantic navigation using &lt;nav&gt; and
+                                structured menus with &lt;ul&gt;.</li>
+                            <pre>
+&lt;nav&gt;
+    &lt;ul&gt;
+        &lt;li&gt;&lt;a href="#home"&gt;Home&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href="#about"&gt;About&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href="#services"&gt;Services&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href="#contact"&gt;Contact&lt;/a&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+&lt;/nav&gt;
+                            </pre>
+                            <li><strong>Media Embedding:</strong> Using &lt;picture&gt; for responsive images and
+                                &lt;video&gt; for multimedia content.</li>
+                            <pre>
+&lt;picture&gt;
+    &lt;source srcset="image-large.jpg" media="(min-width: 768px)"&gt;
+    &lt;source srcset="image-small.jpg" media="(max-width: 767px)"&gt;
+    &lt;img src="image-default.jpg" alt="Description of image"&gt;
+&lt;/picture&gt;
+                    
+&lt;video controls&gt;
+    &lt;source src="video.mp4" type="video/mp4"&gt;
+    &lt;source src="video.ogg" type="video/ogg"&gt;
+                      Your browser does not support the video tag.
+&lt;/video&gt;
+                            </pre>
+                        </ul>
+                    </article>
+
+                    <article id="button-input">
+                        <h3>Button vs Input Type="Button"</h3>
+                        <p><strong>&lt;button&gt;:</strong> More flexible, supports embedding elements like &lt;img&gt;
+                            or
+                            &lt;span&gt;, and has a default 'type="submit"' unless specified otherwise.</p>
+                        <p><strong>&lt;input type="button"&gt;:</strong> Simple and restrictive, supports plain text via
+                            'value' but cannot contain nested elements.</p>
+
+                        <p>The <code>button</code> element is also preferred for accessibility, as it can carry
+                            descriptive labels, making it easier for screen readers to interpret.</p>
+                        <p>The <code>input type="button"</code> is faster for scenarios requiring minimal customization,
+                            often used in simple scripts or automation.</p>
+                    </article>
+                    <article id="get-post">
+                        <h3>GET vs POST</h3>
+                        <table>
+                            <tr>
+                                <th>Aspect</th>
+                                <th>GET</th>
+                                <th>POST</th>
+                            </tr>
+                            <tr>
+                                <td>Data Visibility</td>
+                                <td>Data appended to URL as query strings.</td>
+                                <td>Data sent in request body, not visible in URL.</td>
+                            </tr>
+                            <tr>
+                                <td>Security</td>
+                                <td>Less secure for sensitive data.</td>
+                                <td>More secure for sensitive transmissions.</td>
+                            </tr>
+                            <tr>
+                                <td>Use Cases</td>
+                                <td>Search queries, bookmarkable URLs.</td>
+                                <td>Form submissions, file uploads.</td>
+                            </tr>
+                        </table>
+
+                        <p><strong>Additional Considerations:</strong> GET requests can be cached and remain in browser
+                            history, while POST requests do not. These differences have implications for usability and
+                            user privacy.</p>
+                    </article>
+                </section>
+                <section id="php">
+                    <h2>PHP</h2>
+                    <article id="spaceship-operator">
+                        <h3>PHP Spaceship Operator</h3>
+                        <p>The spaceship operator (&lt;=&gt;) compares two expressions and returns:</p>
+                        <ul>
+                            <li>-1 if the left operand is less than the right.</li>
+                            <li>0 if both operands are equal.</li>
+                            <li>1 if the left operand is greater than the right.</li>
+                        </ul>
+                        <pre>
+$a = 1 &lt;=&gt; 2; // -1
+$b = 2 &lt;=&gt; 2; // 0
+$c = 3 &lt;=&gt; 2; // 1
+                        </pre>
+
+                        <p>This operator is especially useful in sorting algorithms, such as those utilizing the
+                            <code>usort</code> function in PHP. It's concise and avoids the verbosity of standard
+                            comparison logic.
+                        </p>
+                    </article>
+                    <article id="magic-constants">
+                        <h3>PHP Magic Constants</h3>
+                        <ul>
+                            <li><strong>__LINE__:</strong> Returns the current line number of the file where it is used.
+                                This is often used for debugging purposes to identify where a specific line of code is
+                                executing.</li>
+                            <li><strong>__FILE__:</strong> Provides the full path and filename of the file. If used
+                                inside an included file, it will return the path of that file. This is particularly
+                                useful for file inclusion and dynamic path handling.</li>
+                            <li><strong>__DIR__:</strong> Returns the directory of the file where it's called. It’s
+                                commonly used to locate resources relative to the script’s location. Note that the
+                                directory name does not include a trailing slash unless in the root directory.</li>
+                            <li><strong>__CLASS__:</strong> Outputs the name of the class (case-sensitive) where it is
+                                used. When used inside a trait, it returns the class that uses the trait.</li>
+                            <li><strong>__METHOD__:</strong> Provides the name of the method (case-sensitive) in which
+                                it is used. It is often employed in debugging or logging to track the execution flow.
+                            </li>
+                            <li><strong>__FUNCTION__:</strong> Returns the name of the function (case-sensitive) in
+                                which it is used. Anonymous functions are given a unique name in the format of
+                                `{closure}`.</li>
+                            <li><strong>__TRAIT__:</strong> Shows the name of the trait where it is used, including the
+                                namespace, if any. This is useful for tracking trait usage in larger, modular codebases.
+                            </li>
+                            <li><strong>__NAMESPACE__:</strong> Outputs the name of the current namespace. This is
+                                helpful when dealing with namespaced code, ensuring no conflicts arise between global
+                                and local namespaces.</li>
+                        </ul>
+                        <br>
+                        <p>Magic constants provide contextual information about where they are called, making them
+                            invaluable for debugging, dynamic programming, and implementing modular designs. They are
+                            evaluated at compile-time and can be used in a wide range of scenarios, from logging to
+                            building reusable components.</p>
+                    </article>
+                </section>
+                <section id="xml">
+                    <h2>XML</h2>
+                    <article id="external-dtd">
+                        <h3>External DTDs</h3>
+                        <p><strong>System:</strong> Specifies an exact location of the DTD file.</p>
+                        <pre>
+&lt;!DOCTYPE note SYSTEM "note.dtd"&gt;
+
+                    </pre>
+                        <p><strong>Public:</strong> Refers to a standardized DTD with an identifier.</p>
+                        <pre>
+&lt;!DOCTYPE note PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"&gt;
+
+                    </pre>
+
+                        <p>External DTDs provide modularity by allowing reuse across multiple XML documents. However,
+                            using external references can introduce validation issues if the file is unavailable.</p>
+                    </article>
+                    <article id="standalone-attribute">
+                        <h3>Standalone Attribute</h3>
+                        <p>Indicates whether the XML document relies on external DTDs.</p>
+                        <pre>
+&lt;?xml version="1.0" standalone="yes"?&gt;
+                    </pre>
+                        <ul>
+                            <li><strong>yes:</strong> No external DTD dependencies.</li>
+                            <li><strong>no:</strong> Relies on external DTDs.</li>
+                        </ul>
+
+                        <p>The <strong>standalone</strong> attribute enhances compatibility in environments where
+                            external resources may not be reliably loaded, making XML documents more portable.</p>
+                    </article>
+                </section>
+
+                <section id="references">
+                    <h2>References</h2>
+                    <ol>
+                        <li>Mozilla Developer Network, "HTML: HyperText Markup Language," [Online]. Available: <a
+                                href="https://developer.mozilla.org/en-US/docs/Web/HTML">https://developer.mozilla.org/en-US/docs/Web/HTML.</a>
+                        </li>
+                        <li>WHATWG, "HTML Living Standard," [Online]. Available: <a
+                                href="https://html.spec.whatwg.org/">https://html.spec.whatwg.org/.</a>
+                        </li>
+                        <li>PHP.net, "PHP Manual," [Online]. Available: <a
+                                href="https://www.php.net/manual/en/">https://www.php.net/manual/en/.</a>
+                        </li>
+                        <li>W3Schools, "PHP Tutorial," [Online]. Available: <a
+                                href="https://www.w3schools.com/php/">https://www.w3schools.com/php/.</a>
+                        </li>
+                        <li>W3C, "Extensible Markup Language (XML)," [Online]. Available: <a
+                                href="https://www.w3.org/XML/">https://www.w3.org/XML/.</a>
+                        </li>
+                        <li>E. T. Harold, "XML in a Nutshell," O'Reilly Media, [Online]. Available: <a
+                                href="https://www.oreilly.com/library/view/xml-in-a/9780596801496/">https://www.oreilly.com/library/view/xml-in-a/9780596801496/.</a>
+                        </li>
+                        <li>W3C, "Document Object Model (DOM)," [Online]. Available: <a
+                                href="https://www.w3.org/DOM/">https://www.w3.org/DOM/.</a>
+                        </li>
+                        <li>Mozilla Developer Network, "Web APIs Documentation," [Online]. Available: <a
+                                href="https://developer.mozilla.org/en-US/docs/Web/API">https://developer.mozilla.org/en-US/docs/Web/API.</a>
+                        </li>
+                    </ol>
+                </section>
+            </div>
+        </div>
+    </main>
+
+    <footer id="footer">
+
+    </footer>
+
+</body>
+<script src="/GIN446-Website/GIN446-Frontend/javascript/navscript.js"></script>
+<script src="/GIN446-Website/GIN446-Frontend/javascript/research scripts/researchscript.js"></script>
+
+</html>

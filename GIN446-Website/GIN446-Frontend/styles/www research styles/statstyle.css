@@ -1,0 +1,27 @@
+#stats .imgs{
+    display: block;
+}
+#stats .imgs img{
+    width: 70%;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+#stats .imgs p{
+    text-align: center;
+    width: 100%;
+}
+@media screen and (max-width: 768px){
+    #stats p{
+        font-size: smaller;
+    }
+    #stats .imgs{
+        display: block;
+    }
+    #stats .imgs p{
+        text-align: center;
+        width: 100%;
+    }
+}
+
+

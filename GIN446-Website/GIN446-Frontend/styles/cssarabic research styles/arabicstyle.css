@@ -1,0 +1,156 @@
+section[lang="ar"] {
+    direction: rtl;
+    font-size: 1.15em;
+    word-spacing: 0.2em;
+    margin-right: 10px;
+}
+h1{
+    letter-spacing: normal;
+}
+
+
+.txi img {
+    width: 30%;
+    float: left;
+    margin: 1%;
+    border: 5px solid rgb(205, 205, 205); /* White frame */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3); /* Shadow effect */
+    border-radius: 15px; /* Rounded corners */
+    transform: rotate(-2deg); /* Slight tilt for a playful effect */
+    transition: transform 0.3s ease; /* Smooth transition */
+}
+
+.txi p {
+    display: inline-block;
+    width: 68%;
+}
+section {
+    clear: both;
+}
+section h2{
+    z-index: 1000;
+}
+
+img:hover {
+    transform: rotate(0deg) scale(1.05); /* Zoom and straighten on hover */
+}
+
+@media screen and (min-width: 900px) {
+    #history {
+        height: 500px;
+    }
+}
+
+.caption {
+    clear: both;
+    float: left;
+    font-size: 0.86em;
+    text-align: center;
+    margin: 0;
+    max-width: 30%;
+}
+
+section p {
+    margin-bottom: 10px;
+}
+
+#chapel {
+    margin-bottom: 20px;
+    clear: both;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+    border: 5px solid rgb(205, 205, 205); /* White frame */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3); /* Shadow effect */
+    border-radius: 15px; /* Rounded corners */
+    transform: rotate(-2deg); /* Slight tilt for a playful effect */
+    transition: transform 0.3s ease; /* Smooth transition */
+}
+#chapel:hover {
+    transform: rotate(0deg) scale(1.05); /* Zoom and straighten on hover */
+}
+.hover-item {
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+/* Media query for smartphones (up to 600px) */
+@media only screen and (max-width: 600px) {
+
+    /* Adjust images and text alignment in sections */
+    .txi img {
+        width: 100%;
+        /* Make images full width */
+        margin: 0;
+        /* Remove margins to fit properly */
+        float: none;
+        /* Disable floating */
+    }
+
+    .txi p {
+        width: 100%;
+        /* Full width for paragraphs */
+    }
+
+    /* Figcaption adjustment for better readability */
+    .caption {
+        font-size: 0.9em;
+        text-align: center;
+        max-width: 100%;
+        margin-bottom: 20px;
+    }
+
+    /* Full width images inside sections */
+    #chapel,
+    .txi img {
+        width: 80%;
+        height: auto;
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        margin-top: 20px;
+        margin-bottom: 10px;
+    }
+
+}
+
+/* Media query for tablets (up to 768px) */
+@media only screen and (min-width: 601px) and (max-width: 768px) {
+
+    /* Adjust text and image layout */
+    .txi img {
+        width: 50%;
+        /* Reduce image width on tablets */
+        float: none;
+        /* Disable floating */
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        /* Center align images */
+    }
+
+    .txi p {
+        width: 100%;
+        /* Full width for paragraphs */
+    }
+
+    /* Slightly smaller captions for tablets */
+    .caption {
+        font-size: 0.9em;
+        margin-bottom: 20px;
+        text-align: center;
+        max-width: 100%;
+    }
+
+    /* Ensure adequate padding for sections */
+    section {
+        padding: 10px;
+    }
+
+    /* Make chapel image full-width */
+    #chapel {
+        width: 70%;
+        height: auto;
+    }
+}

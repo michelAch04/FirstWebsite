@@ -1,0 +1,52 @@
+#history figure img{
+    width: 100%;
+    height: auto;
+}
+.imgs{
+    display: flex;
+    justify-content: space-between;
+    align-items:end;
+    gap: 10px;
+    margin: 15px;
+}
+#history .imgs figure{
+    width: 45%;
+}
+#history .imgs figcaption{
+    font-size: 0.7em;
+    text-align: center;
+}
+#history .imgs span{
+    color: red;
+    font-weight: bold;
+}
+
+#current .imgs img{
+    width: 100%;
+    height: auto;
+}
+#current .imgs div{
+    width: 90%;
+}
+#current .imgs{
+    align-items: center;
+    margin-top: 5px;
+}
+
+/* For very small devices (like phones) with screen width of 480px or less */
+@media (max-width: 580px) {
+    /* Further reduce image size for better fit */
+    #current .imgs img {
+        margin-top: 10px;
+        width: 100%;
+        max-width: 350px;
+    }
+
+    /* Text block in .imgs should take full width */
+    #current .imgs div {
+        width: 100%;
+        margin-top: 10px;
+    }
+}
+
+

@@ -1,0 +1,14 @@
+#intro p{
+    margin-top: 10px;
+}
+#issues hr{
+    position: sticky;
+    top: 4.5%;
+}
+#issues #breach{
+    margin-top: 15px;
+    width: 95%;
+}
+#issues div:nth-child(n+5) h3{
+    background-color: #fdfdfd;
+}
